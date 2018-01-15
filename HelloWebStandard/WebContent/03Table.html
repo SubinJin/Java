@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 - 테이블 다루기</title>
+</head>
+<body>
+<h1>HTML5 - 테이블 다루기</h1>
+<table border="1" cellspacing="0" cellpadding="5" width="350">
+	<tr>
+		<th>이름</th><th>국어</th><th>영어</th><th>수학</th>
+	</tr>
+	<tr>
+		<td>혜교</td><td>78</td><td>88</td><td>79</td>
+	</tr>
+	<tr>
+		<td>지현</td><td>68</td><td>98</td><td>99</td>
+	</tr>
+	<tr>
+		<td>수지</td><td>88</td><td>82</td><td>91</td>
+	</tr>
+</table>
+
+<h1>HTML - 이미지 다루기</h1>
+<p><img src="https://www.google.co.kr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" width="100"></p>
+<p><img src="http://imgnews.naver.net/image//260/2018/01/15/sptPostArticleImage-12252.png?type=w540" height="200"></p>
+<p><a href="https://www.google.co.kr"><img border="1" alt="구글" src="https://www.google.co.kr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"></a></p>
+
+<h1>HTML - 폼 다루기</h1>
+<form name="sjform" action="" method="post">
+	<div>이름<input type="text" name="name" required="required"></div>
+	<div><label for="">국어</label><input type="text" name="kor" id="kor" required="required"></div>
+	<div><label for="">영어</label><input type="text" name="eng" id="eng" required="required"></div>
+	<div><label for="">수학</label><input type="text" name="math" id="math" required="required"></div>
+	<div>
+		<button type="submit">입력완료</button>
+		<button type="reset">다시입력</button>
+	</div>
+</form>
+
+
+<form>
+	<div>
+		<label for="pwd">비밀번호</label>
+		<input type="password" name="pwd" id="pwd">
+	</div>
+	<div>
+		<label for="memo">메모작성</label>
+		<textarea name="memo" id="memo" rows="7" cols="55"></textarea>
+	</div>
+	<div>
+		성별은? 남자<input type="radio" name="gender" id="gender" value="m">
+			     여자<input type="radio" name="gender" id="gender" value="f">	<!--  name을 다르게 하면 남자, 여자 동시선택 가능 -->
+	</div>
+	<div>
+	취미는? 
+	게임 <input type="checkbox" name="hobby" value="game">
+	운동 <input type="checkbox" name="hobby" value="exe">
+	여행<input type="checkbox" name="hobby" value="trip">
+	프로그래밍<input type="checkbox" name="hobby" value="bigdata">
+	</div>
+	<div>
+	거주 지역은?<select name="zipcode">
+				<option>--선택하세요--</option>
+				<option>서울</option>
+				<option>경기</option>
+				<option>부산</option>
+			 </select>
+	</div>
+	<div>
+		입력양식제어(readonly)<input type="text" readonly="readonly" value="이글이 보이나요">
+		입력양식제어(disabled)<input type="text" disabled="disabled" value="이글이 보이나요">
+		입력양식제어(placeholder)<input type="text" placeholder="이글이 보이나요">
+		
+	</div>
+</form>
+</body>
+</html>
