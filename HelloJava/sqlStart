@@ -1,0 +1,3 @@
+select * from CUSTOMER; --alt + x 로 실행 (한줄씩)
+
+select * from book;
