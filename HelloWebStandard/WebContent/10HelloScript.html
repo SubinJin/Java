@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 다루기</title>
+	<script>
+		alert('head에서 실행');
+	</script>
+</head>
+<body>
+	<h1>JavaScript 다루기</h1>
+	<button type="button" onclick="alert('버튼으로 실행')">여기를 클릭하세요!</button>
+	<button type="button" onclick="sayHello1()")">안녕하세요!</button>
+
+
+	<!-- 스크립트 파일은 body 태그 맨 마지막 부분에 작성하자 -->
+	<!-- 왜냐하면 위에다가 script를 쓰면 html 코드가 뜨기도 전에 java 코드가 걸려서 순서가 안맞으면서 오류가 날 수 있음 -->
+	<script>
+		alert('body에서 실행');
+	</script>
+	<script>
+		var name = "혜교";
+		var kor = 99; eng = 98; mat = 88;
+		var tot = kor + eng + mat;
+		var avg = tot / 3;
+		document.write("<p>" + name + "</p>");
+		document.write("<p>" + kor + "</p>");
+		document.writeln("<p>" + eng + "</p>");
+		document.writeln("<p>" + mat + "</p>");
+		document.writeln("<p>" + tot + "</p>");
+		document.writeln("<p>" + avg.toFixed(1) + "</p>");
+
+		document.writeln("<p>" + typeof name + "</p>");
+		document.writeln("<p>" + typeof kor + "</p>");
+		document.writeln("<p>" + typeof eng + "</p>");
+		document.writeln("<p>" + typeof tot + "</p>");
+		document.writeln("<p>" + typeof avg + "</p>");
+	</script>
+	<script>
+		// 함수 정의 - 이렇게 실행순서가 별 상관 없는 경우는 head에 정의해도 상관 없음
+		function sayHello1() {
+			document.write("<p>안녕하세요~ 자바스크립트!</p>")
+		}
+		function sayHello2(name) {
+			var msg = "<p>안녕하세요~" + name + "</p>"	;
+			document.write(msg);
+		}
+		function sayHello3() {
+			var msg = "<p>안녕하세요~ 자바스크립트!</p>"	;
+			return msg;
+		}
+		function sayHello4(name) {
+			var msg = "<p>안녕하세요~" + name + "</p>"	;
+			return msg;
+		}
+		// 함수 호출
+		sayHello1();
+		sayHello2("HTML5");
+		sayHello2("CSS3");
+		
+		// 반환값이 있는 함수처리
+		var msg = sayHello3();
+		document.write(msg);
+		
+		msg = sayHello4("Java8");
+		document.write(msg);
+	</script>
+	<script>
+		// 배열 다루기
+		var names = ["혜교", "지현", "수지"]; // 추천!
+		var korsList = new Array(99, 98, 99);
+		for(var i = 0; i < names.length; i++){
+			document.write("<p>" + names[i] + "</p>");
+			// document.write("<p>" + korList[i] + "</p>");
+		}
+	</script>
+	<script>
+		// 연관배열 다루기 - 배열요소에 이름을 붙여 사용하기
+		var sj = { name : "혜교", kor : 99, eng : 98, mat :99};
+		document.write(:"<p>" + sj["eng"] + "</p>")
+		document.write(:"<p>" + sj.eng + "</p>")
+		
+		// 반복문을 이용해 연관배열 출력하기
+		for (var key in sj) {
+			document.write("<p>" + sj[key] + "</p>")
+		}
+		
+		
+		
+	</script>
+</body>
+</html>
