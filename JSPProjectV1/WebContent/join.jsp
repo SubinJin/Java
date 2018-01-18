@@ -5,23 +5,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>JSP 프로젝트 V1</title>
-				<style>
-			body{width:950px; margin: 0 auto;}
-			/* 본문영역의 크기를 적당하게 조절, 가운데 정렬*/
-			a:link{text-decoration: none; color : black; font-weight:bold}
-			a:visited{color : black}
-			a:hover{text-decoration : underline; color : green}
-			a:active{color : red}
-			/* 하이퍼링크에 대한 디자인 적용*/
-			ul{list-style-type:none; padding-bottom: 10px}
-			ul li{float:left; padding-left:3em}
-			/* 상단 메뉴 디자인 */
-			hr{border:1px solid black; clear: both;}
-			/* hr 태그 디자인 */
-			p{text-align:center;}
-			/* 꼬릿말 영역 텍스트 정렬 */
-			#contents{min-height:550px;}
-			/* 본문영역 디자인 */
+		<link href="./css/normalize.css" rel="stylesheet">
+		<link href="./css/ronaldotree.css" rel="stylesheet">
+		<style>
+			#joinfrm {width : 400px; margin:0 auto; padding-top : 85px;}
+			#joinfrm label{display : inline-block; width : 120px; text-align : right;}
+			#joinfrm div{margin : 7px 0;}
+			/* button[type=submit]{margin-left:125px;} */
 		</style>
 	</head>
 	<body>
@@ -37,15 +27,49 @@
 			<hr>
 		</header>
 		<h1>회원가입</h1>
-		<div>아이디<input type="text" name="uid" required="required"></div>
-		<div>비밀번호<input type="text" name="pwd" required="required"></div>
-		<div>비밀번호 확인<input type="text" name="repwd" required="required"></div>
-		<div>이름<input type="text" name="name" required="required"></div>
-		<div id="contents"><button type="submit">입력완료</button><button type="reset">다시입력</button></div>
+		<form id = "joinfrm" method="post" action="joinok.jsp">
+		<div id = "joinfrm">
+		<div id="contents">
+		<div><label>아이디</label><input type="text" name="uid" required="required"></div>
+		<div><label>비밀번호</label><input type="text" name="pwd" required="required"></div>
+		<div><label>비밀번호 확인</label><input type="text" name="repwd" required="required"></div>
+		<div><label>이름</label><input type="text" name="name" required="required"></div>		
+		<label></label><button type="submit">입력완료</button><button type="reset">다시입력</button></div>
+		</div>
+		</form>
+		
 		<footer>
 			<hr>
 			<p>copyright &copy; 2018. ronaldotree <sup>&reg;</sup>. all rights reserved.</p>
 		</footer>
+		
+		<script>
+			var joinfrm = document.getElementById("joinfrm");
+			joinfrm.onsubmit = checkjoin; // 이벤트 등록
+			var uid = document.getElementById("uid"); // 아이디
+			var uid = document.getElementById("pwd"); // 비밀번호
+			var uid = document.getElementById("repwd"); // 비밀번호 확인
+			var uid = document.getElementById("name"); // 이름
+			
+			function checkjoin(){
+				if(uid.value ==""){ 
+					alert("아이디를 입력하세요!");
+					uid.focus();
+				}else if(pwd.value ==""){
+					alert("비밀번호를 입력하세요!");
+					pwd.focus();
+				}else if(pwd.value != repwd.value){
+					alert("비밀번호가 일치하지 않습니다!");
+					pwd.focus();
+				}else if(name.value ==""){
+					alert("이름을 입력하세요!");
+					name.focus();
+				}else{
+					return true;	// submit 기능 동작
+				}
+				return false; // submit 기능 중지
+			}
+		</script>
 		
 	</body>
 </html>

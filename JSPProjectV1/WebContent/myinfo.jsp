@@ -8,9 +8,10 @@
 		<link href="./css/normalize.css" rel="stylesheet">
 		<link href="./css/ronaldotree.css" rel="stylesheet">
 		<style>
-			#loginfrm {width : 400px; margin:0 auto; padding-top : 85px;}
-			#loginfrm label{display : inline-block; width : 120px; text-align : right;}
-			#loginfrm div{ margin : 7px 0;}
+			#myinfofrm {width : 400px; margin:0 auto; padding-top : 85px;}
+			#myinfofrm label{display : inline-block; width : 120px; text-align : right;}
+			#myinfofrm div{margin : 7px 0;}
+			img{margin:250px auto;}
 		</style>
 	</head>
 	<body>
@@ -25,13 +26,16 @@
 			 </ul>
 			<hr>
 		</header>
-		<h1>로그인</h1>
-		<div id = "loginfrm">
+
+		<h1>회원정보</h1>		
+		<div id = "myinfofrm">
 		<div id="contents">
-		<div><label>아이디</label><input type="text" name="uid" required="required"></div>
-		<div><label>비밀번호</label><input type="text" name="pwd" required="required"></div>
-		<label></label><button type="submit">로그인</button></div>
-		</div>
+		<div><label>아이디</label><span> ronaldotree</span></div>
+		<div><label>이름</label><span> SubinJin</span></div>
+		<div><label>이메일</label><span> jeensb0705@naver.com</span></div>
+		<div><label>가입일</label><span> 2018-01-15 16:02:12</span></div>
+		</div></div>
+	
 		<footer>
 			<hr>
 			<p>copyright &copy; 2018. ronaldotree <sup>&reg;</sup>. all rights reserved.</p>
