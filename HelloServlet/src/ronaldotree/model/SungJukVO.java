@@ -1,12 +1,12 @@
-package project.v1;
+package ronaldotree.model;
 
 public class SungJukVO {
 	// 멤버 변수
 	private String name;
 	private int kor;
 	private int eng;
-	private int math;
-	private int tot = kor + eng + math;
+	private int mat;
+	private int tot = kor + eng + mat;
 	private double avgr = tot / 3.0;
 	private String grd;
 
@@ -16,11 +16,11 @@ public class SungJukVO {
 	}
 
 	// 매개변수 생성자
-	public SungJukVO(String name, int kor, int eng, int math) {
+	public SungJukVO(String name, int kor, int eng, int mat) {
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
-		this.math = math;
+		this.mat = mat;
 	}
 
 	// setter / getter
@@ -48,15 +48,16 @@ public class SungJukVO {
 		this.eng = eng;
 	}
 
-	public int getMath() {
-		return math;
+	public int getMat() {
+		return mat;
 	}
 
-	public void setMath(int math) {
-		this.math = math;
+	public void setMat(int mat) {
+		this.mat = mat;
 	}
 
 	public int getTot() {
+//		tot = this.kor + this.eng + this.mat;
 		return tot;
 	}
 
@@ -65,6 +66,7 @@ public class SungJukVO {
 	}
 
 	public double getAvgr() {
+//		avgr = (double)tot / 3;
 		return avgr;
 	}
 
@@ -73,6 +75,17 @@ public class SungJukVO {
 	}
 
 	public String getGrd() {
+//		String grd = "F";
+//		switch((int)avgr/10){
+//			case 10 : case 9 : grd = "A";
+//			break;
+//			case 8 : grd = "B";
+//			break;
+//			case 7 : grd = "C";
+//			break;
+//			case 6 : grd = "D";
+//			break;
+//		}
 		return grd;
 	}
 
@@ -83,7 +96,7 @@ public class SungJukVO {
 	// toString
 	@Override
 	public String toString() {
-		String fmt = "SungJukVO [name=%s, kor=%d, eng=%d, math=%d, tot=%d, avgr=%.1f, grd=%s]";
-		return String.format(fmt, name, kor, eng, math, tot, avgr, grd);
+		String fmt = "SungJukVO [name=%s, kor=%d, eng=%d, mat=%d, tot=%d, avgr=%.1f, grd=%s]";
+		return String.format(fmt, name, kor, eng, mat, tot, avgr, grd);
 	};
 }
