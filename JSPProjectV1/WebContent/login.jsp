@@ -28,8 +28,10 @@
 		<h1>로그인</h1>
 		<div id = "loginfrm">
 		<div id="contents">
+		<form id="loginfrm" method = "post" action="loginok.jsp">
 		<div><label>아이디</label><input type="text" name="uid" required="required"></div>
 		<div><label>비밀번호</label><input type="text" name="pwd" required="required"></div>
+		</form>
 		<label></label><button type="submit">로그인</button></div>
 		</div>
 		<footer>

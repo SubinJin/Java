@@ -1,8 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="ronaldotree.jspv1.UserInfo" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %> 
+
+
 <jsp:useBean id="mi" scope="page" class="ronaldotree.jspv1.UserInfo"/>    
 <jsp:setProperty name="mi" property="*" />
+
+<!-- 입력한 데이터를 DB에 저장 -->
+<sql:update dataSource="jdbc/oracle" sql="insert into member (userid, pwd, name) values(?, ?, ?)">
+<sql:param value ="${mi.uid}"/>
+<sql:param value ="${mi.pwd}"/>
+<sql:param value ="${mi.name}"/>
+</sql:update>
+
 
 <!DOCTYPE html>
 <html lang = "ko">
@@ -11,7 +22,6 @@
 		<title>JSP 프로젝트 V1</title>
 		<link href="./css/normalize.css" rel="stylesheet">
 		<link href="./css/ronaldotree.css" rel="stylesheet">
-
 	</head>
 	<body>
 		<header>
@@ -29,6 +39,7 @@
 		<h2>회원가입 처리결과</h2>
 		<div>아이디 : <jsp:getProperty property="uid" name="mi"/> </div>
 		<div>이름 : <jsp:getProperty property="name" name="mi"/> </div>
+		</div>
 		<hr>
 		<div><button type = "button">로그인 하러 가기</button></div>
 		<footer>
